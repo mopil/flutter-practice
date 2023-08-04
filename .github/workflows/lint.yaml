@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v3.10.6
+      - uses: subosito/flutter-action@v1
         with:
           flutter-version: '3.10.6'
       - name: Install packages
