@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import '../utils/api_client.dart';
 import 'board_model.dart';
 
