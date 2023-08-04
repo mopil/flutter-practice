@@ -1,5 +1,5 @@
-import '../utils/api_client.dart';
-import 'board_model.dart';
+import 'package:untitled/utils/api_client.dart';
+import 'package:untitled/models/board_model.dart';
 
 class BoardRepository {
   final ApiClient apiClient;

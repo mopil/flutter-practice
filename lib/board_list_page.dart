@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/utils/api_client.dart';
 
-import 'models/board_model.dart';
-import 'models/board_reporsitory.dart';
+import 'package:untitled/models/board_model.dart';
+import 'package:untitled/models/board_reporsitory.dart';
 
 class BoardListPage extends StatelessWidget {
   const BoardListPage({Key? key}) : super(key: key);
