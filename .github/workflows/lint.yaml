@@ -1,20 +1,43 @@
-name: check code quality
+name: Check code quality
+
 on:
   pull_request:
     branches:
       - main
+
 jobs:
   test:
     name: Check code quality
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v1
+
+      - name: Set up Flutter actions
+        uses: subosito/flutter-action@v1
         with:
           flutter-version: '3.10.6'
+
+      - name: Cache Flutter dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.pub-cache
+            ~/.flutter_plugin_cache
+            **/ios/.symlinks/
+            **/.dart_tool/package_config.json
+            **/android/.gradle/
+            **/android/app/libs/
+          key: ${{ runner.os }}-packages-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-packages-
+
       - name: Install packages
         run: flutter pub get
+
       - name: Formatting
         run: dart format --set-exit-if-changed lib
+
       - name: Linting
         run: flutter analyze
+
