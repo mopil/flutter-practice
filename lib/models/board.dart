@@ -1,14 +1,14 @@
 class Board {
   final String title;
-  final String contents;
+  final String content;
   final String image;
 
-  Board({required this.title, required this.contents, required this.image});
+  Board({required this.title, required this.content, required this.image});
 
   factory Board.fromJson(Map<String, dynamic> json) {
     return Board(
-      title: json['name'],
-      contents: json['contents'],
+      title: json['title'],
+      content: json['content'],
       image: json['image'],
     );
   }

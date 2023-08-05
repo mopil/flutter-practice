@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:untitled/board_list_page.dart';
+import 'package:untitled/screens/board_list.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   navigateToHome() {
     Timer(const Duration(seconds: 3), () async {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const BoardListPage()));
+          MaterialPageRoute(builder: (context) => const BoardListScreen()));
     });
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled/loading_screen.dart';
+import 'package:untitled/screens/splash.dart';
 import 'package:untitled/utils/api_client.dart';
 
 void main() {
