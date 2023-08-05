@@ -103,4 +103,3 @@ class _BoardListScreenState extends State<BoardListScreen> {
     );
   }
 }
-
