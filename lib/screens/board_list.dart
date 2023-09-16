@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled/utils/api_client.dart';
+import 'package:untitled/utils/api/api.dart';
 
 import 'package:untitled/models/board.dart';
 import 'package:untitled/models/board_reporsitory.dart';
@@ -29,7 +29,7 @@ class _BoardListScreenState extends State<BoardListScreen> {
 
   void _initializeRepository() {
     _boardRepository =
-        BoardRepository(apiClient: Provider.of<ApiClient>(context));
+        BoardRepository(apiClient: Provider.of<ApiServerConnector>(context));
   }
 
   Future<void> _refreshBoards() async {

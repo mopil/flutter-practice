@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:untitled/screens/instagram.dart';
+import 'package:untitled/screens/test_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,9 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 1;
 
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-    ),
+    TestScreen(),
     // redirect instagram.dart
     InstagramFeedScreen(),
     Text(

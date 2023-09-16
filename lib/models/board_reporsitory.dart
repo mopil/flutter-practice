@@ -1,14 +1,15 @@
-import 'package:untitled/utils/api_client.dart';
+import 'package:dio/dio.dart';
+import 'package:untitled/utils/api/api.dart';
 import 'package:untitled/models/board.dart';
 
 class BoardRepository {
-  final ApiClient apiClient;
+  final ApiServerConnector apiClient;
 
   BoardRepository({required this.apiClient});
 
   Future<List<Board>> getAllBoards() async {
     try {
-      var response = await apiClient.dio.get("/boards/list");
+      Response response = await apiClient.dio.get("/boards");
       return (response.data as List<dynamic>)
           .map((item) => Board.fromJson(item))
           .toList();
